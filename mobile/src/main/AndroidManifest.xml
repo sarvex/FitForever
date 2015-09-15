@@ -1,39 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.fitforever" >
+<manifest package="com.fitforever"
+          xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+  <application
+    android:allowBackup="true"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:theme="@style/AppTheme">
+    <activity
+      android:name=".MainActivity"
+      android:label="@string/app_name">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
 
-        <meta-data
-            android:name="com.google.android.gms.car.application"
-            android:resource="@xml/automotive_app_desc" />
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
 
-        <service android:name=".MyMessagingService" >
-        </service>
+    <meta-data
+      android:name="com.google.android.gms.car.application"
+      android:resource="@xml/automotive_app_desc"/>
 
-        <receiver android:name=".MessageReadReceiver" >
-            <intent-filter>
-                <action android:name="com.fitforever.ACTION_MESSAGE_READ" />
-            </intent-filter>
-        </receiver>
-        <receiver android:name=".MessageReplyReceiver" >
-            <intent-filter>
-                <action android:name="com.fitforever.ACTION_MESSAGE_REPLY" />
-            </intent-filter>
-        </receiver>
-    </application>
+    <service android:name=".MyMessagingService">
+    </service>
+
+    <receiver android:name=".MessageReadReceiver">
+      <intent-filter>
+        <action android:name="com.fitforever.ACTION_MESSAGE_READ"/>
+      </intent-filter>
+    </receiver>
+    <receiver android:name=".MessageReplyReceiver">
+      <intent-filter>
+        <action android:name="com.fitforever.ACTION_MESSAGE_REPLY"/>
+      </intent-filter>
+    </receiver>
+
+    <meta-data
+      android:name="io.fabric.ApiKey"
+      android:value="728f4154b735b6a8a611da825c32082364e01827"/>
+  </application>
+
 
 </manifest>
