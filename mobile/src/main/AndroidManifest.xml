@@ -4,15 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-
-    <!--
-     To retrieve OAuth 2.0 tokens or invalidate tokens to disconnect a user. This disconnect
-     option is required to comply with the Google+ Sign-In developer policies
-    -->
     <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
-    <!-- To retrieve the account name (email) as part of sign-in: -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
-    <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.READ_PROFILE"/>
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
 
@@ -36,15 +29,15 @@
           android:name="com.google.android.gms.car.application"
           android:resource="@xml/automotive_app_desc"/>
 
-        <service android:name=".MyMessagingService">
+      <service android:name=".message.MyMessagingService">
         </service>
 
-        <receiver android:name=".MessageReadReceiver">
+      <receiver android:name=".message.MessageReadReceiver">
             <intent-filter>
                 <action android:name="com.fitforever.ACTION_MESSAGE_READ"/>
             </intent-filter>
         </receiver>
-        <receiver android:name=".MessageReplyReceiver">
+      <receiver android:name=".message.MessageReplyReceiver">
             <intent-filter>
                 <action android:name="com.fitforever.ACTION_MESSAGE_REPLY"/>
             </intent-filter>
@@ -55,7 +48,7 @@
           android:value="728f4154b735b6a8a611da825c32082364e01827"/>
 
         <activity
-          android:name=".LoginActivity"
+          android:name=".auth.LoginActivity"
           android:label="@string/title_activity_login"
           android:windowSoftInputMode="adjustResize|stateHidden">
         </activity>

@@ -1,4 +1,4 @@
-package com.fitforever.utility.ailment;
+package com.fitforever.ailment;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

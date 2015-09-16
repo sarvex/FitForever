@@ -19,13 +19,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.fitforever.ailment.AilmentFragment;
+import com.fitforever.ailment.PagerAdapter;
 import com.fitforever.auth.LoginActivity;
-import com.fitforever.utility.ailment.AilmentFragment;
-import com.fitforever.utility.ailment.PagerAdapter;
 import com.parse.ParseAnalytics;
 import com.parse.ParseUser;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AilmentFragment.OnFragmentInteractionListener {
 
   private DrawerLayout drawerLayout;
   private Toolbar toolbar;
@@ -62,8 +62,8 @@ public class MainActivity extends AppCompatActivity {
     ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
     if (viewPager != null) {
       PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager());
-      adapter.addFragment(new AilmentFragment(), "Dengue");
       adapter.addFragment(new AilmentFragment(), "Fever");
+      adapter.addFragment(new AilmentFragment(), "Dengue");
       adapter.addFragment(new AilmentFragment(), "Weight Gain");
       adapter.addFragment(new AilmentFragment(), "Weight Loss");
       viewPager.setAdapter(adapter);
@@ -134,5 +134,10 @@ public class MainActivity extends AppCompatActivity {
   private void toLoginActivity() {
     startActivity(new Intent(this, LoginActivity.class)
         .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
+  }
+
+  @Override
+  public void onFragmentInteraction(String id) {
+
   }
 }

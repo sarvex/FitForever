@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.fitforever;
+package com.fitforever.message;
 
 import android.app.PendingIntent;
 import android.app.Service;

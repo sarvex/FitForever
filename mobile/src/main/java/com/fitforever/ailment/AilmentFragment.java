@@ -1,4 +1,4 @@
-package com.fitforever.utility.ailment;
+package com.fitforever.ailment;
 
 import android.content.Context;
 import android.os.Bundle;
