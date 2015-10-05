@@ -9,16 +9,18 @@ repositories {
 
 android {
     compileSdkVersion "Google Inc.:Glass Development Kit Preview:19"
-    buildToolsVersion "23.0.1"
+  buildToolsVersion project.BUILD_TOOLS_VERSION
 
     defaultConfig {
         applicationId "com.fitforever"
+      multiDexEnabled = true
+      targetSdkVersion Integer.parseInt(project.TARGET_SDK_VERSION)
         minSdkVersion 'MNC'
-        targetSdkVersion 'MNC'
-        versionCode 1
-        versionName "1.0"
+      versionCode Integer.parseInt(project.VERSION_CODE)
+      versionName project.VERSION_CODE
     }
-    buildTypes {
+
+  buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
