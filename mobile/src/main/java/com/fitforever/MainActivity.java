@@ -3,6 +3,7 @@ package com.fitforever;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -19,13 +20,26 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.fitforever.ailment.AilmentFragment;
 import com.fitforever.ailment.PagerAdapter;
+import com.fitforever.alert.AlertFragment;
+import com.fitforever.ask.AskFragment;
 import com.fitforever.auth.LoginActivity;
+import com.fitforever.doctor.DoctorFragment;
+import com.fitforever.history.HistoryFragment;
+import com.fitforever.home.HomeFragment;
+import com.fitforever.packages.PackagesFragment;
+import com.fitforever.profile.ProfileFragment;
+import com.fitforever.search.SearchFragment;
+import com.fitforever.wallet.WalletFragment;
 import com.parse.ParseAnalytics;
 import com.parse.ParseUser;
 
-public class MainActivity extends AppCompatActivity implements AilmentFragment.OnFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity
+    implements HomeFragment.OnFragmentInteractionListener, SearchFragment.OnFragmentInteractionListener,
+    ProfileFragment.OnFragmentInteractionListener, AskFragment.OnFragmentInteractionListener,
+    AlertFragment.OnFragmentInteractionListener, WalletFragment.OnFragmentInteractionListener,
+    HistoryFragment.OnFragmentInteractionListener, PackagesFragment.OnFragmentInteractionListener,
+    DoctorFragment.OnFragmentInteractionListener {
 
   private DrawerLayout drawerLayout;
   private Toolbar toolbar;
@@ -61,11 +75,16 @@ public class MainActivity extends AppCompatActivity implements AilmentFragment.O
 
     ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
     if (viewPager != null) {
-      PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager());
-      adapter.addFragment(new AilmentFragment(), "Fever");
-      adapter.addFragment(new AilmentFragment(), "Dengue");
-      adapter.addFragment(new AilmentFragment(), "Weight Gain");
-      adapter.addFragment(new AilmentFragment(), "Weight Loss");
+      PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(), this);
+      adapter.addFragment(new HomeFragment(), "Home");
+      adapter.addFragment(new SearchFragment(), "Search");
+      adapter.addFragment(new ProfileFragment(), "Profile");
+      adapter.addFragment(new AskFragment(), "Ask");
+      adapter.addFragment(new AlertFragment(), "Alerts");
+      adapter.addFragment(new WalletFragment(), "Wallet");
+      adapter.addFragment(new HistoryFragment(), "History");
+      adapter.addFragment(new PackagesFragment(), "Packages");
+      adapter.addFragment(new DoctorFragment(), "Doctors");
       viewPager.setAdapter(adapter);
     }
 
@@ -137,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements AilmentFragment.O
   }
 
   @Override
-  public void onFragmentInteraction(String id) {
+  public void onFragmentInteraction(Uri uri) {
 
   }
 }
