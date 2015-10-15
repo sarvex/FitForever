@@ -5,9 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
@@ -18,7 +16,6 @@ import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.fitforever.ailment.PagerAdapter;
 import com.fitforever.alert.AlertFragment;
@@ -77,14 +74,10 @@ public class MainActivity extends AppCompatActivity
     if (viewPager != null) {
       PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(), this);
       adapter.addFragment(new HomeFragment(), "Home");
-      adapter.addFragment(new SearchFragment(), "Search");
-      adapter.addFragment(new ProfileFragment(), "Profile");
-      adapter.addFragment(new AskFragment(), "Ask");
-      adapter.addFragment(new AlertFragment(), "Alerts");
       adapter.addFragment(new WalletFragment(), "Wallet");
-      adapter.addFragment(new HistoryFragment(), "History");
       adapter.addFragment(new PackagesFragment(), "Packages");
       adapter.addFragment(new DoctorFragment(), "Doctors");
+      adapter.addFragment(new HistoryFragment(), "History");
       viewPager.setAdapter(adapter);
     }
 
@@ -92,15 +85,6 @@ public class MainActivity extends AppCompatActivity
     tabLayout.setupWithViewPager(viewPager);
     tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
     tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
-
-    FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-    fab.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
-            .setAction("Action", null).show();
-      }
-    });
 
     ParseAnalytics.trackAppOpenedInBackground(getIntent());
     if (ParseUser.getCurrentUser() == null) {
