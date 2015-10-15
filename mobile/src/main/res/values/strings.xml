@@ -17,7 +17,8 @@
   <string name="google_plus">Google+</string>
   <string name="twitter">Twitter</string>
   <string name="action_logout">Logout</string>
-  <string name="fitforever">Fit Forever</string>
+  <string name="fit_forever">Fit Forever</string>
   <string name="username_place_holder">Username</string>
   <string name="hello_blank_fragment">Hello blank fragment</string>
+  <string name="search">Search</string>
 </resources>
