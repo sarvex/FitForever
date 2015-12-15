@@ -1,0 +1,88 @@
+<android.support.v7.widget.CardView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:card_view="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/ailment_card_view"
+  android:layout_height="wrap_content"
+  android:layout_width="match_parent"
+  android:layout_margin="3dp"
+  card_view:cardCornerRadius="3dp"
+  card_view:cardElevation="6dp">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/bg_gradient"
+
+    android:weightSum="1">
+
+  <RelativeLayout
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:padding="4dp"
+    android:layout_weight="0.4">
+
+    <ImageView
+      android:id="@+id/disease_photo"
+      android:layout_alignParentStart="true"
+      android:layout_alignParentLeft="true"
+      android:layout_alignParentTop="true"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="12dp"
+      android:layout_marginRight="12dp"
+      android:layout_width="wrap_content"
+      android:src="@drawable/ic_menu"/>
+
+    <TextView
+      android:id="@+id/disease_name"
+      android:layout_alignParentTop="true"
+      android:layout_height="wrap_content"
+      android:layout_toEndOf="@id/disease_photo"
+      android:layout_toRightOf="@+id/disease_photo"
+      android:layout_width="wrap_content"
+      android:textColor="#309F3F"
+      android:textSize="12sp"
+      tools:text="Disease Name"/>
+
+    <TextView
+      android:id="@+id/severity_index"
+      android:layout_below="@id/disease_name"
+      android:layout_marginTop="3dp"
+      android:layout_height="wrap_content"
+      android:layout_toEndOf="@id/disease_photo"
+      android:layout_toRightOf="@+id/disease_photo"
+      android:layout_width="wrap_content"
+      android:textColor="#309F3F"
+      tools:text="Severity Index"
+      android:textSize="12sp"/>
+
+    <TextView
+      android:id="@+id/xy_symptom_match"
+      android:layout_below="@id/severity_index"
+      android:layout_marginTop="3dp"
+      android:layout_height="wrap_content"
+      android:layout_toEndOf="@id/disease_photo"
+      android:layout_toRightOf="@+id/disease_photo"
+      android:layout_width="wrap_content"
+      android:textColor="#309F3F"
+      tools:text="x/y Symptoms Match"
+      android:textSize="12sp"/>
+  </RelativeLayout>
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_weight="0.6"
+      >
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#309F3F"
+        android:layout_marginTop="23dp"
+        tools:text="Probability Bar"
+        android:textSize="12sp"/>
+
+    </LinearLayout>
+  </LinearLayout>
+</android.support.v7.widget.CardView>

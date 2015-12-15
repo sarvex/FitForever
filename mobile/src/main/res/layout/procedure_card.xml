@@ -1,0 +1,67 @@
+<android.support.v7.widget.CardView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:card_view="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/ailment_card_view"
+  android:layout_height="wrap_content"
+  android:layout_width="match_parent"
+  android:layout_margin="3dp"
+  card_view:cardCornerRadius="3dp"
+  card_view:cardElevation="6dp">
+
+
+
+    <RelativeLayout
+      android:layout_height="wrap_content"
+      android:layout_width="match_parent"
+      android:padding="4dp"
+      android:background="@drawable/bg_gradient">
+
+      <ImageView
+        android:id="@+id/procedure_photo"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_width="wrap_content"
+        android:src="@drawable/ic_menu"/>
+
+      <TextView
+        android:id="@+id/procedure_name"
+        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/procedure_photo"
+        android:layout_toRightOf="@+id/procedure_photo"
+        android:layout_width="wrap_content"
+        android:textColor="#309F3F"
+        android:textSize="12sp"
+        tools:text="Procedure Name"/>
+
+      <TextView
+        android:id="@+id/procedure_category"
+        android:layout_below="@id/procedure_name"
+        android:layout_marginTop="3dp"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/procedure_photo"
+        android:layout_toRightOf="@+id/procedure_photo"
+        android:layout_width="wrap_content"
+        android:textColor="#309F3F"
+        tools:text="Procedure Category"
+        android:textSize="12sp"/>
+
+      <TextView
+        android:id="@+id/procedure_type"
+        android:layout_below="@id/procedure_category"
+        android:layout_marginTop="3dp"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/procedure_photo"
+        android:layout_toRightOf="@+id/procedure_photo"
+        android:layout_width="wrap_content"
+        android:textColor="#309F3F"
+        tools:text="Procedure Type"
+        android:textSize="12sp"/>
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
