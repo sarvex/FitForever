@@ -96,6 +96,6 @@ dependencies {
   compile 'com.sora.util.akatsuki:akatsuki-parceler:0.0.1@aar'
   compile 'com.sora.util.akatsuki:akatsuki-api:0.0.1'
 
-  compile 'com.github.bumptech.glide:glide:3.6.1'
+  compile 'com.github.bumptech.glide:glide:3.8.0'
   compile 'de.hdodenhof:circleimageview:2.0.0'
 }
